@@ -10,9 +10,9 @@ module ActiveRecord #:nodoc:
       module ClassMethods
         
         def money(name, options = {})
-          attr_name = "#{name}_in_cents".to_sym
-          options = {:cents => attr_name}.merge(options)
-          mapping = [[options[:cents].to_s, 'cents']]
+          attr_name = "#{name}_amount".to_sym
+          options = {:amount => attr_name}.merge(options)
+          mapping = [[options[:amount].to_s, 'amount']]
           mapping << [options[:currency].to_s, 'currency'] if options[:currency]
           composed_of name, :class_name => 'Money', :mapping => mapping, :allow_nil => true,
             :converter => lambda{|m| m.to_money}
