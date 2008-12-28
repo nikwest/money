@@ -1,6 +1,7 @@
 require 'support/cattr_accessor'
 require 'money/bank/no_exchange_bank'
 require 'money/bank/variable_exchange_bank'
+require 'money/bank/currency_exchange_bank'
 require 'money/core_extensions'
 
 # === Usage with ActiveRecord
