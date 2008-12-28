@@ -51,6 +51,13 @@ class Money
   
   # String to use when formating zero values
   cattr_accessor :zero
+  
+  @@symbols = {
+    'USD' => '$',
+    'GPB' => '£',
+    'JPY' => '¥',
+    'EUR' => '$'
+  }
 
   # Creates a new money object. 
   #  Money.new(100) 
@@ -134,7 +141,7 @@ class Money
     
     rules = rules.flatten
 
-    formatted = "$" + to_s(rules.include?(:no_fraction) ? 0 : 2)
+    formatted = @@symbols[currency] + to_s(rules.include?(:no_fraction) ? 0 : 2)
 
     if rules.include?(:with_currency)
       formatted << " "
