@@ -18,7 +18,7 @@ class VariableExchangeBank
   def exchange(money, currency)
     rate = get_rate(money.currency, currency) or raise Money::MoneyError.new("Can't find required exchange rate")
     
-    Money.new((money.cents * rate).floor, currency, money.precision)
+    Money.new((money.amount * rate).floor, currency, money.precision)
   end
   
   private
