@@ -54,9 +54,10 @@ class Money
   
   @@symbols = {
     'USD' => '$',
-    'GPB' => '£',
+    'GBP' => '£',
     'JPY' => '¥',
-    'EUR' => '$'
+    'EUR' => '$',
+    'CHF' => 'SwF'
   }
 
   # Creates a new money object. 
